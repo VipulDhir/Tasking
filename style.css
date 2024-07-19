@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -20,6 +20,9 @@ body {
 
 h1 {
   text-align: center;
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
 #task-form,
@@ -30,21 +33,56 @@ h1 {
 #task-form input,
 #task-form textarea,
 #task-form select,
-#task-form button {
+#task-form button,
+#filters input,
+#filters select {
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#task-form input:focus,
+#task-form textarea:focus,
+#task-form select:focus,
+#task-form button:focus,
+#filters input:focus,
+#filters select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#task-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#task-form button:hover {
+  background-color: #0056b3;
 }
 
 #task-dashboard {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #task-dashboard div {
   width: 30%;
+}
+
+#task-dashboard h2 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #task-dashboard ul {
@@ -57,9 +95,29 @@ h1 {
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#task-dashboard li:hover {
+  background-color: #f9f9f9;
 }
 
 #task-dashboard li.completed {
   text-decoration: line-through;
   color: grey;
+}
+
+#task-dashboard li button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#task-dashboard li button:hover {
+  background-color: #eee;
 }
